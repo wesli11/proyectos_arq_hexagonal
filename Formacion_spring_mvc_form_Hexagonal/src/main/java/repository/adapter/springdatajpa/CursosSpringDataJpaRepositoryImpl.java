@@ -51,7 +51,10 @@ public class CursosSpringDataJpaRepositoryImpl implements CursosRepository {
 
 	@Override
 	public List<Curso> cursosAvailableAlumno(String usuario) {
-		return null;
+		List<CursoEntity>entity=  repository.cursosNoAlumno(usuario);
+		return entity.stream()
+		          .map(c->Utilidades.cursoBuilder(c))
+		             .collect(Collectors.toList());
 	}
 
 	@Override
