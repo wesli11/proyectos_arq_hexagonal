@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.Curso;
+import repository.adapter.entity.CursoEntity;
 import repository.adapter.entity.Utilidades;
 import repository.port.CursosRepository;
 
@@ -42,7 +43,10 @@ public class CursosSpringDataJpaRepositoryImpl implements CursosRepository {
 
 	@Override
 	public List<Curso> cursosAlumno(String usuario) {
-		return null;
+		List<CursoEntity>entity=  repository.cursosByAlumno(usuario);
+		return  entity.stream()
+		          .map(c->Utilidades.cursoBuilder(c))
+		             .collect(Collectors.toList());
 	}
 
 	@Override
