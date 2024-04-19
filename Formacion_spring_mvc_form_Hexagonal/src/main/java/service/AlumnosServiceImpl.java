@@ -54,4 +54,10 @@ public class AlumnosServiceImpl implements AlumnosService {
 		return alumnosRepository.alumnosCurso(idCurso);
 	}
 
+	@Override
+	public int numeroMatriculasPorCurso(int idCurso) {
+          System.out.println("COPY PASTE");	
+          return 0;
+	}
+
 }

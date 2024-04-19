@@ -11,4 +11,5 @@ public interface AlumnosService {
 	void actualizarAlumno(Alumno alumno);
 	List<Alumno> obtenerAlumnos();
 	List<Alumno> alumnosCurso(int idCurso);
+	int numeroMatriculasPorCurso(int idCurso);
 }
